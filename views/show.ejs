@@ -1,0 +1,23 @@
+<%- include('partials/header', {
+    title: 'Show Page'
+}) %>
+    <h1>NBA Player Show Page</h1>
+    <p><%=player.name%> plays for <%=player.team%>. He plays the <%=player.position%> position.</p>
+       
+    <p>He currently 
+        <%if (player.injured === true) { %>
+            is injured.
+        <% } else { %>
+            is healthy.
+        <% } %> 
+    </p>
+
+    <p>
+        His sponsors currently are: 
+        <ul>
+            <%for (let i = 0; i < player.sponsors.length; i++){%>
+                <li><%=player.sponsors[i]%></li>
+            <%}%>
+        </ul>
+    </p>
+<%- include('partials/footer') %>

@@ -1,0 +1,13 @@
+<%- include('partials/header', {
+    title: 'Show Page'
+}) %>
+    <h1>New Player Page</h1>
+    <form action="/players" method="POST">
+        Name: <input type="text" name="name" /><br/>
+        Team: <input type="text" name="team" /><br/>
+        Position: <input type="text" name="position" /><br/>
+        Injured: <input type="checkbox" name="injured" /><br/>
+        Sponsors: <input type="text" name="sponsors" /><br/>
+        <input type="submit" name="" value="Add Player"/>
+    </form>
+<%- include('partials/footer') %>

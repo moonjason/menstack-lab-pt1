@@ -1,0 +1,17 @@
+<%- include('partials/header', {
+    title: 'index page'
+}) %>
+    <h1>NBA Players Index</h1>
+    <ul>
+        <% for (let i = 0; i < player.length; i++) {%>
+            <li><a href="/players/<%=player[i]._id%>"><%=player[i].name%></a></li>
+            <form method="POST" action="/players/<%=player[i]._id%>?_method=DELETE">
+                <button type="submit">Delete</button>
+            </form>
+            <a href="/players/<%=player[i]._id%>/edit"><button type="submit">Edit</button></a>
+        <% } %> 
+    </ul>
+    <nav>
+        <a href="/players/new">Add a new player</a>
+    </nav>
+<%- include('partials/footer') %>
